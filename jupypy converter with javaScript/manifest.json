@@ -1,0 +1,29 @@
+{
+  "name": "Jupypy Converter",
+  "description": "Converting Jupyter Notebook files to Python Language file.",
+  "version": "0.5",
+  "permissions": ["contextMenus", "downloads", "storage", "notifications", "activeTab"],
+  "background": {"scripts": ["script.js"], "persistent": false},
+  "manifest_version": 2,
+  "icons": {
+    "64": "icon.png"
+  },
+  "browser_action": {
+    "default_icon": "icon.png",
+    "name": "Jupypy Converter"
+   },
+  "commands": {
+    "save-python-file": {
+      "suggested_key": { "default": "Ctrl+Shift+S" },
+      "description": "Saves the notebook file to pyhthon file."
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["script.js"]
+    }
+  ]
+}
